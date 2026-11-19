@@ -4,12 +4,12 @@ from tree_sitter import Language, Parser
 parser = Parser(Language(tspython.language()))
 
 kode = b"""
-nilai = 80
+class Mahasiswa:
+    def __init__(self, nama):
+        self.nama = nama
 
-if nilai >= 75:
-    print("Lulus")
-else:
-    print("Tidak lulus")
+    def sapa(self):
+        print("Halo", self.nama)
 """
 
 tree = parser.parse(kode)
