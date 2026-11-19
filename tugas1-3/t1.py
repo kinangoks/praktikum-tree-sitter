@@ -5,7 +5,7 @@ parser = Parser(Language(tspython.language()))
 
 kode = b"""
 class Mahasiswa:
-    def __init__(self, nama):
+    def __init__(self, nama)
         self.nama = nama
 
     def sapa(self):
