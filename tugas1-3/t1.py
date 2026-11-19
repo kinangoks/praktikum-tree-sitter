@@ -4,8 +4,13 @@ from tree_sitter import Language, Parser
 parser = Parser(Language(tspython.language()))
 
 kode = b"""
-def sapa(nama):
-    print("Halo", nama)
+nilai = 80
+
+if nilai >= 75:
+    print("Lulus")
+else:
+    print("Tidak lulus")
 """
+
 tree = parser.parse(kode)
 print(tree.root_node)
