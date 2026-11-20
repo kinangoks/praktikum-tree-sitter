@@ -1,1 +1,7 @@
+priority >= 2
+a = 1 and b = 2
+a = 1 or b = 2 and c = 3
+(a = 1 or b = 2) and c = 3
+not archived = true
+status in ("open", "pending")
 title contains "invoice"
