@@ -20,6 +20,14 @@
             "named": true
           },
           {
+            "type": "contains_expression",
+            "named": true
+          },
+          {
+            "type": "in_expression",
+            "named": true
+          },
+          {
             "type": "not_expression",
             "named": true
           },
@@ -47,6 +55,14 @@
           },
           {
             "type": "comparison",
+            "named": true
+          },
+          {
+            "type": "contains_expression",
+            "named": true
+          },
+          {
+            "type": "in_expression",
             "named": true
           },
           {
@@ -135,6 +151,58 @@
     }
   },
   {
+    "type": "contains_expression",
+    "named": true,
+    "fields": {
+      "field": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "value": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "string",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "in_expression",
+    "named": true,
+    "fields": {
+      "field": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "values": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "value_list",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "not_expression",
     "named": true,
     "fields": {
@@ -152,6 +220,14 @@
           },
           {
             "type": "comparison",
+            "named": true
+          },
+          {
+            "type": "contains_expression",
+            "named": true
+          },
+          {
+            "type": "in_expression",
             "named": true
           },
           {
@@ -191,6 +267,14 @@
             "named": true
           },
           {
+            "type": "contains_expression",
+            "named": true
+          },
+          {
+            "type": "in_expression",
+            "named": true
+          },
+          {
             "type": "not_expression",
             "named": true
           },
@@ -218,6 +302,14 @@
           },
           {
             "type": "comparison",
+            "named": true
+          },
+          {
+            "type": "contains_expression",
+            "named": true
+          },
+          {
+            "type": "in_expression",
             "named": true
           },
           {
@@ -254,6 +346,14 @@
           },
           {
             "type": "comparison",
+            "named": true
+          },
+          {
+            "type": "contains_expression",
+            "named": true
+          },
+          {
+            "type": "in_expression",
             "named": true
           },
           {
@@ -294,6 +394,14 @@
           "named": true
         },
         {
+          "type": "contains_expression",
+          "named": true
+        },
+        {
+          "type": "in_expression",
+          "named": true
+        },
+        {
           "type": "not_expression",
           "named": true
         },
@@ -309,6 +417,29 @@
     }
   },
   {
+    "type": "value_list",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "boolean",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "!=",
     "named": false
   },
@@ -318,6 +449,10 @@
   },
   {
     "type": ")",
+    "named": false
+  },
+  {
+    "type": ",",
     "named": false
   },
   {
@@ -345,12 +480,20 @@
     "named": false
   },
   {
+    "type": "contains",
+    "named": false
+  },
+  {
     "type": "false",
     "named": false
   },
   {
     "type": "identifier",
     "named": true
+  },
+  {
+    "type": "in",
+    "named": false
   },
   {
     "type": "not",
