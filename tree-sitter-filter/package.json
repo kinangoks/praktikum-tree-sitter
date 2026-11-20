@@ -2,7 +2,7 @@
   "name": "tree-sitter-filter",
   "version": "0.1.0",
   "description": "A grammar for parsing filter expressions in admin application search queries.",
-  "type": "module",
+  "type": "commonjs",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/tree-sitter/tree-sitter-filter.git"
