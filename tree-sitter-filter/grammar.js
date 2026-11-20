@@ -16,27 +16,27 @@ module.exports = grammar({
     ),
 
     or_expression: $ => prec.left(1, seq(
-      $._expr,
+      field('left', $._expr),
       'or',
-      $._expr
+      field('right', $._expr)
     )),
 
     and_expression: $ => prec.left(2, seq(
-      $._expr,
+      field('left', $._expr),
       'and',
-      $._expr
+      field('right', $._expr)
     )),
 
     not_expression: $ => prec(3, seq(
       'not',
-      $._expr
+      field('operand', $._expr)
     )),
 
     boolean: $ => choice('true', 'false'),
 
     parenthesized: $ => seq(
       '(',
-      $._expr,
+      field('expression', $._expr),
       ')'
     ),
 
@@ -47,9 +47,9 @@ module.exports = grammar({
     ),
 
     comparison: $ => seq(
-      $.identifier,
-      choice('=', '!=', '>', '<', '>=', '<='),
-      $._value
+      field('field', $.identifier),
+      field('operator', choice('=', '!=', '>', '<', '>=', '<=')),
+      field('value', $._value)
     ),
 
     identifier: $ => /[a-zA-Z_][a-zA-Z0-9_.]*/,

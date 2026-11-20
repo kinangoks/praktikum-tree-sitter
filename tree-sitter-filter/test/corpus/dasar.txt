@@ -88,3 +88,18 @@ not archived = true
     (comparison [0, 4] - [0, 19]
       (identifier [0, 4] - [0, 12])
       (boolean [0, 15] - [0, 19]))))
+
+
+======================================
+Field
+======================================
+
+not archived = true
+
+---
+
+(query [0, 0] - [0, 19]
+  (not_expression [0, 0] - [0, 19]
+    operand: (comparison [0, 4] - [0, 19]
+      field: (identifier [0, 4] - [0, 12])
+      value: (boolean [0, 15] - [0, 19]))))
