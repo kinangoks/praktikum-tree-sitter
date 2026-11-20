@@ -1,0 +1,189 @@
+@id baris 17: main
+@id baris 5: print
+@id baris 7: b
+@id baris 9: hasil
+@id baris 10: hasil
+@id baris 8: hasil
+@id baris 12: panjang
+@id baris 13: lebar
+@id baris 14: luas
+@id baris 15: luas
+@id baris 20: angka
+@id baris 26: __name__
+@id baris 24: print
+@id baris 2: pathlib
+@id baris 8: a
+@id baris 12: lebar
+@id baris 8: b
+@id baris 18: sapa
+@id baris 20: tambah
+@id baris 24: luas
+@id baris 1: os
+@id baris 4: nama
+@id baris 2: Path
+@id baris 5: nama
+@id baris 7: a
+@id baris 9: print
+@id baris 13: luas
+@id baris 14: print
+@id baris 21: luas
+@id baris 23: angka
+@id baris 27: main
+@id baris 23: print
+
+@nama baris 4: sapa
+@nama baris 17: main
+@nama baris 12: hitung_luas
+@nama baris 7: tambah
+
+@nama baris 4: sapa
+@nama baris 12: hitung_luas
+@nama baris 7: tambah
+@nama baris 17: main
+@params baris 4: (nama)
+@params baris 17: ()
+@params baris 12: (panjang, lebar)
+@params baris 7: (a, b)
+sapa 1
+tambah 2
+hitung_luas 2
+main 0
+
+@fn baris 2: print
+@fn baris 6: print
+@fn baris 20: print
+@fn baris 21: print
+@fn baris 11: print
+@args baris 2: ("Halo", nama)
+@args baris 21: ("Luas akhir:", luas)
+@args baris 11: ("Luas:", luas)
+@args baris 6: ("Hasil:", hasil)
+@args baris 20: ("Angka:", angka)
+
+module [1:0]
+  import_statement [1:0]
+    name: dotted_name [1:7]
+      identifier [1:7]
+  import_from_statement [2:0]
+    module_name: dotted_name [2:5]
+      identifier [2:5]
+    name: dotted_name [2:20]
+      identifier [2:20]
+  function_definition [4:0]
+    name: identifier [4:4]
+    parameters: parameters [4:8]
+      identifier [4:9]
+    body: block [5:4]
+      expression_statement [5:4]
+        call [5:4]
+          function: identifier [5:4]
+          arguments: argument_list [5:9]
+            string [5:10]
+              string_start [5:10]
+              string_content [5:11]
+              string_end [5:15]
+            identifier [5:18]
+  function_definition [7:0]
+    name: identifier [7:4]
+    parameters: parameters [7:10]
+      identifier [7:11]
+      identifier [7:14]
+    body: block [8:4]
+      expression_statement [8:4]
+        assignment [8:4]
+          left: identifier [8:4]
+          right: binary_operator [8:12]
+            left: identifier [8:12]
+            right: identifier [8:16]
+      expression_statement [9:4]
+        call [9:4]
+          function: identifier [9:4]
+          arguments: argument_list [9:9]
+            string [9:10]
+              string_start [9:10]
+              string_content [9:11]
+              string_end [9:17]
+            identifier [9:20]
+      return_statement [10:4]
+        identifier [10:11]
+  function_definition [12:0]
+    name: identifier [12:4]
+    parameters: parameters [12:15]
+      identifier [12:16]
+      identifier [12:25]
+    body: block [13:4]
+      expression_statement [13:4]
+        assignment [13:4]
+          left: identifier [13:4]
+          right: binary_operator [13:11]
+            left: identifier [13:11]
+            right: identifier [13:21]
+      expression_statement [14:4]
+        call [14:4]
+          function: identifier [14:4]
+          arguments: argument_list [14:9]
+            string [14:10]
+              string_start [14:10]
+              string_content [14:11]
+              string_end [14:16]
+            identifier [14:19]
+      return_statement [15:4]
+        identifier [15:11]
+  function_definition [17:0]
+    name: identifier [17:4]
+    parameters: parameters [17:8]
+    body: block [18:4]
+      expression_statement [18:4]
+        call [18:4]
+          function: identifier [18:4]
+          arguments: argument_list [18:8]
+            string [18:9]
+              string_start [18:9]
+              string_content [18:10]
+              string_end [18:15]
+      expression_statement [20:4]
+        assignment [20:4]
+          left: identifier [20:4]
+          right: call [20:12]
+            function: identifier [20:12]
+            arguments: argument_list [20:18]
+              integer [20:19]
+              integer [20:22]
+      expression_statement [21:4]
+        assignment [21:4]
+          left: identifier [21:4]
+          right: call [21:11]
+            function: identifier [21:11]
+            arguments: argument_list [21:22]
+              integer [21:23]
+              integer [21:27]
+      expression_statement [23:4]
+        call [23:4]
+          function: identifier [23:4]
+          arguments: argument_list [23:9]
+            string [23:10]
+              string_start [23:10]
+              string_content [23:11]
+              string_end [23:17]
+            identifier [23:20]
+      expression_statement [24:4]
+        call [24:4]
+          function: identifier [24:4]
+          arguments: argument_list [24:9]
+            string [24:10]
+              string_start [24:10]
+              string_content [24:11]
+              string_end [24:22]
+            identifier [24:25]
+  if_statement [26:0]
+    condition: comparison_operator [26:3]
+      identifier [26:3]
+      string [26:15]
+        string_start [26:15]
+        string_content [26:16]
+        string_end [26:24]
+    consequence: block [27:4]
+      expression_statement [27:4]
+        call [27:4]
+          function: identifier [27:4]
+          arguments: argument_list [27:8]

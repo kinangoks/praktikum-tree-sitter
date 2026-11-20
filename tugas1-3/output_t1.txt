@@ -1,0 +1,54 @@
+(module (expression_statement (assignment left: (identifier) right: (integer))))
+
+(module (expression_statement (assignment left: (identifier) right: (binary_operator left: (integer) right: (integer)))))
+
+(module (function_definition name: (identifier) parameters: (parameters (identifier)) body: (block (expression_statement (call function: (identifier) arguments: (argument_list (string (string_start) (string_content) (string_end)) (identifier)))))))
+
+(module (expression_statement (assignment left: (identifier) right: (integer))) (if_statement condition: (comparison_operator (identifier) (integer)) consequence: (block (expression_statement (call function: (identifier) arguments: (argument_list (string (string_start) (string_content) (string_end)))))) alternative: (else_clause body: (block (expression_statement (call function: (identifier) arguments: (argument_list (string (string_start) (string_content) (string_end)))))))))
+
+(module (class_definition name: (identifier) body: (block (function_definition name: (identifier) parameters: (parameters (identifier) (identifier)) body: (block (expression_statement (assignment left: (attribute object: (identifier) attribute: (identifier)) right: (identifier))))) (function_definition name: (identifier) parameters: (parameters (identifier)) body: (block (expression_statement (call function: (identifier) arguments: (argument_list (string (string_start) (string_content) (string_end)) (attribute object: (identifier) attribute: (identifier))))))))))
+
+(module (class_definition name: (identifier) body: (block (function_definition name: (identifier) parameters: (parameters (identifier) (identifier)) body: (block (expression_statement (assignment left: (attribute object: (identifier) attribute: (identifier)) right: (identifier))))) (function_definition name: (identifier) parameters: (parameters (identifier)) body: (block (expression_statement (call function: (identifier) arguments: (argument_list (string (string_start) (string_content) (string_end)) (attribute object: (identifier) attribute: (identifier))))))))))
+class anonim
+identifier bernama
+: anonim
+block bernama
+
+Anak-anak node parameters:
+( anonim
+identifier bernama
+, anonim
+identifier bernama
+) anonim
+identifier bernama
+
+Anak-anak node parameters:
+( anonim
+identifier bernama
+, anonim
+identifier bernama
+) anonim
+: anonim
+
+Anak-anak node parameters:
+( anonim
+identifier bernama
+, anonim
+identifier bernama
+) anonim
+block bernama
+
+Anak-anak node parameters:
+( anonim
+identifier bernama
+, anonim
+identifier bernama
+) anonim
+
+(module (ERROR (class_definition name: (identifier) (ERROR (identifier) (parameters (identifier) (identifier))) body: (block (expression_statement (assignment left: (attribute object: (identifier) attribute: (identifier)) right: (identifier))))) (function_definition name: (identifier) parameters: (parameters (identifier)) body: (block (expression_statement (call function: (identifier) arguments: (argument_list (string (string_start) (string_content) (string_end)) (attribute object: (identifier) attribute: (identifier)))))))))
+class_definition bernama
+Traceback (most recent call last):
+  File "C:\Users\ASUS TUF\OneDrive - Politeknik Negeri Bandung\3. PLP\PRAKTIK\Praktikum10_PP_081\praktikum-tree-sitter\tugas1-3\t1.py", line 21, in <module>
+    parameters = tree.root_node.children[0].child_by_field_name("body").children[0].child_by_field_name("parameters")
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'children'

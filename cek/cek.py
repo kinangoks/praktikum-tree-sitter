@@ -8,6 +8,11 @@ parser = Parser(PY)
 
 Q_TODO = Query(PY, '((comment) @c (#match? @c "TODO|FIXME"))')
 
+Q_FUNGSI = Query(
+    PY,
+    '(function_definition name: (identifier) @nama) @fungsi'
+)
+
 def cek_file(path):
     tree = parser.parse(path.read_bytes())
 
@@ -15,22 +20,21 @@ def cek_file(path):
     for node in QueryCursor(Q_TODO).captures(tree.root_node).get("c", []):
         print(f"{path}:{node.start_point[0] + 1}: {node.text.decode().strip()}")
 
-    # Fitur 2: fungsi yang lebih dari 30 baris
-    def cari_fungsi(node):
-        if node.type == "function_definition":
-            jumlah_baris = node.end_point[0] - node.start_point[0] + 1
+    # Fitur 2: mendeteksi fungsi lebih dari 30 baris
+    hasil = QueryCursor(Q_FUNGSI).matches(tree.root_node)
+    for _, cap in hasil:
+        nama = cap["nama"][0].text.decode()
+        fungsi = cap["fungsi"][0]
 
-            if jumlah_baris > 30:
-                nama = node.child_by_field_name("name")
-                print(
-                    f"{path}: Fungsi {nama.text.decode()} "
-                    f"memiliki {jumlah_baris} baris"
-                )
+        jumlah_baris = (
+            fungsi.end_point[0] - fungsi.start_point[0] + 1
+        )
 
-        for child in node.children:
-            cari_fungsi(child)
-
-    cari_fungsi(tree.root_node)
+        if jumlah_baris > 30:
+            print(
+                f"{path}: Fungsi {nama} memiliki "
+                f"{jumlah_baris} baris"
+            )
 
     # Fitur 3: file yang pohonnya mengandung error
     if tree.root_node.has_error:
