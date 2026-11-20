@@ -11,7 +11,7 @@ module.exports = grammar({
       $.or_expression,
       $.and_expression,
       $.parenthesized
-
+      
     ),
 
     or_expression: $ => prec.left(1, seq(
@@ -31,6 +31,8 @@ module.exports = grammar({
       $._expr,
       ')'
     ),
+
+
 
     comparison: $ => seq(
       $.identifier,
