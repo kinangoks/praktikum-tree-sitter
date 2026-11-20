@@ -1,4 +1,4 @@
-(function_definition
-    name: (identifier) @nama
-    parameters: (parameters) @params
-)
+(call
+  function: (identifier) @fn
+  arguments: (argument_list) @args
+  (#eq? @fn "print"))
