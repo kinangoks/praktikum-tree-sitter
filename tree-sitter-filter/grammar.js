@@ -8,14 +8,29 @@ module.exports = grammar({
 
     _expr: $ => choice(
       $.comparison,
-      $.and_expression
+      $.or_expression,
+      $.and_expression,
+      $.parenthesized
+
     ),
+
+    or_expression: $ => prec.left(1, seq(
+      $._expr,
+      'or',
+      $._expr
+    )),
 
     and_expression: $ => prec.left(2, seq(
       $._expr,
       'and',
       $._expr
     )),
+
+    parenthesized: $ => seq(
+      '(',
+      $._expr,
+      ')'
+    ),
 
     comparison: $ => seq(
       $.identifier,
